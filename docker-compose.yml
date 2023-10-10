@@ -1,0 +1,17 @@
+version:  '3.8'
+
+services:
+  db:
+    image:  postgres:16
+    environment:
+      POSTGRES_USER: ${DB_PASSWORD}
+      POSTGRES_PASSWORD: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - ./docker-data/db:/var/lib/postgresql/data
+
+
+  
