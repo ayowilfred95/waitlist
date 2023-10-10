@@ -1,6 +1,17 @@
 ## To start the project 
 ### run "go mod download"
 
+## .env file
+### Create a .env file in the root of your project
+#### follow this format
+PORT = 
+DB_PASSWORD=
+DB_HOST=
+DB_USER=
+DB_NAME=
+DB_PORT=
+DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+
 ## In case you have a docker installed on your machine
 ### run "docker-compose up" to start a docker container for this project
 
