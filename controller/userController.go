@@ -170,3 +170,12 @@ func GetUsers(c *fiber.Ctx)error{
 			"users": users,
 		})
 }
+
+
+// delete users 
+
+// func DeleteUser(c *fiber.Ctx)error{
+// 	// 
+	
+
+// }

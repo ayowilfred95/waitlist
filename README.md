@@ -21,17 +21,17 @@ DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_N
 ## Api endpoint to query
 
 ###    Create a user with all the fields(name, email and password)
-####   POST  localhost://4000/api/waitlist
+####   POST  localhost://8080/api/waitlist
 
 ###    create a user with ordinary email
-####   POST  localhost://4000/api/waitlist/user
+####   POST  localhost://8080/api/waitlist/user
 
 ###    update user detail as email is unique and validation is done if email already exist
- ####  PUT  localhost://4000/api/waitlist/user
+ ####  PUT  localhost://8080/api/waitlist/user
 
 
  ###  get all users details 
- #### GET   localhost://4000/api/waitlist
+ #### GET   localhost://8080/api/waitlist
 
 ## Database Type
 ### Postgres

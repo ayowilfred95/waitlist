@@ -33,10 +33,12 @@ func Api() error {
 	//app.Use(cors.New())
 
 	// Initialize cors middleware with specific allowed origins
+	// Initialize cors middleware to allow all origins
 	app.Use(cors.New(cors.Config{
-    AllowOrigins: "http://localhost:5173",
-	AllowHeaders:  "Origin, Content-Type, Accept",
+    AllowOrigins: "*",
+    AllowHeaders: "Origin, Content-Type, Accept",
 	}))
+
 	// add basic middleware
 	app.Use(logger.New())
 	app.Use(recover.New())
