@@ -25,11 +25,21 @@ func CreateUser(c *fiber.Ctx) error {
 		})
 	}
 
+	// check if a user with the same email already exists in the database
+	var existingUser model.User
+	result := database.DB.Where("email=?", body.Email).First(&existingUser)
+	if result.Error == nil {
+		// user with the same email already exists
+		return c.Status(400).JSON(fiber.Map{
+			"error": "User with this email already exists",
+		})
+	}
+
 	// craete  a new user object with data from the request data
 	newUser := &model.User{Name: body.Name, Email: body.Email, PhoneNumber:body.PhoneNumber}
 
 	// create the user in the database
-	result := database.DB.Create(newUser) 
+	result = database.DB.Create(newUser) 
 
 	if result.Error != nil {
 		log.Println("Database error:", result.Error)
